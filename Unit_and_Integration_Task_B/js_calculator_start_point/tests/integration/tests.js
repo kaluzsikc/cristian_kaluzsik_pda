@@ -16,4 +16,46 @@ describe('calculator functionality', function() {
     expect(running_total.getAttribute('value')).to.eventually.equal('2')
   })
 
+  it('should update the display of the running total', function(){
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number9')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('9')
+  })
+
+  it('should do arithmetical operations and display the result -- add', function(){
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number2')).click();
+    element(by.css('#operator_add')).click();
+    element(by.css('#number2')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('4')
+  })
+
+  it('should do arithmetical operations and display the result -- subtract', function(){
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number5')).click();
+    element(by.css('#operator_subtract')).click();
+    element(by.css('#number2')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('3')
+  })
+
+  it('should do arithmetical operations and display the result -- multiply', function(){
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number5')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#number2')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('10')
+  })
+
+  it('should do arithmetical operations and display the result -- divide', function(){
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number8')).click();
+    element(by.css('#operator_divide')).click();
+    element(by.css('#number2')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('4')
+  })
+
 });
