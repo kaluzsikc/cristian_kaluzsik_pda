@@ -17,10 +17,16 @@ describe('calculator', function () {
     assert.equal(5, calculator.runningTotal)
   })
 
-  it('should subtract two numbers', function () {
+  it('should subtract numbers', function () {
     calculator.previousTotal = 7;
     calculator.subtract(4);
     assert.equal(3, calculator.runningTotal)
+  })
+
+  it('should multiply two numbers', function () {
+    calculator.previousTotal = 3;
+    calculator.multiply(5);
+    assert.equal(15, calculator.runningTotal)
   })
 
 });
